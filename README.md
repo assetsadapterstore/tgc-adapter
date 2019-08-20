@@ -12,11 +12,17 @@ openwtester包下的测试用例已经集成了openwallet钱包体系，创建co
 ```ini
 
 #wallet api url
-ServerAPI = "http://rpc.tgcchain.com:8888"
+ServerAPI = "http://IP:PORT"
 # Cache data file directory, default = "", current directory: ./data
 dataDir = ""
 
 ```
+## 官方资料
 
-## 浏览器
-http://www.tgcchain.com/
+### 浏览器
+http://www.turingblock.io/#/dashboard
+
+## 
+
+创建账号接口（通过这个接口创建的账户，是可以转账的）：
+curl --request GET http://XXXXX/v1/evs/uid_createaccount --data '{"new_account":"tgctest", "key_pair":"EVS5GGdCa3nUU3DF2UnJqPJuHh5LUC1yTf8nXkGpwDtgniD9sM3zj"}'

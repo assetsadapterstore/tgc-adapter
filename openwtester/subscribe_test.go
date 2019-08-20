@@ -60,7 +60,7 @@ func TestSubscribeAddress_TGC(t *testing.T) {
 		symbol     = "TGC"
 		addrs      = map[string]string{
 			"tgcopenwtest": "sender",
-			"tgcblocktest": "sender",
+			"tgcblocktest": "receiver",
 		}
 	)
 
@@ -96,7 +96,7 @@ func TestSubscribeAddress_TGC(t *testing.T) {
 
 	//log.Debug("already got scanner:", assetsMgr)
 	scanner := assetsMgr.GetBlockScanner()
-	//scanner.SetRescanBlockHeight(4990263)
+	//scanner.SetRescanBlockHeight(12872165)
 
 	if scanner == nil {
 		log.Error(symbol, "is not support block scan")

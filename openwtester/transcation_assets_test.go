@@ -120,9 +120,10 @@ func testSubmitTransactionStep(tm *openw.WalletManager, rawTx *openwallet.RawTra
 
 func TestTransfer(t *testing.T) {
 	tm := testInitWalletManager()
-	walletID := "W7uYsjKbDjaC6qbF5C1EakhXxry8DBkDNG"
-	accountID := "FTCnn75JezGybFWV2qB5aFUSD8tqQ9L4DPr4JTXaTtuc"
-	to := "tgcblocktest"
+	walletID := "WMQmea5bRawTrsXcS376jVWZQzmqt8j55o"
+	//accountID := "88G6dk763iernTn5De8Cun1B1DBLuAwx11kLHpWCPFTW"
+	accountID := "xZkUcXHHJz55uK1n8F6PUFVUJEqysc1pAEPeFJEg3Qg"
+	to := "tgcopenwtest"
 
 	contract := openwallet.SmartContract{
 		Address:  "evsio.token:TGC",
@@ -134,7 +135,7 @@ func TestTransfer(t *testing.T) {
 
 	testGetAssetsAccountTokenBalance(tm, walletID, accountID, contract)
 
-	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "123.5678", "", "hello boy", &contract)
+	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "12.3456", "", "hello boy", &contract)
 	if err != nil {
 		return
 	}

@@ -72,9 +72,9 @@ func TestWalletManager_GetAssetsAccountBalance(t *testing.T) {
 
 func TestWalletManager_GetAssetsAccountTokenBalance(t *testing.T) {
 	tm := testInitWalletManager()
-	walletID := "W7uYsjKbDjaC6qbF5C1EakhXxry8DBkDNG"
-	accountID := "FTCnn75JezGybFWV2qB5aFUSD8tqQ9L4DPr4JTXaTtuc"
-	//accountID := "53U8zbRKUMcAhFnyFrdMLukMzLQBMSJFr43FMumtcue2"
+	walletID := "WMQmea5bRawTrsXcS376jVWZQzmqt8j55o"
+	//accountID := "88G6dk763iernTn5De8Cun1B1DBLuAwx11kLHpWCPFTW"
+	accountID := "xZkUcXHHJz55uK1n8F6PUFVUJEqysc1pAEPeFJEg3Qg"
 	contract := openwallet.SmartContract{
 		Address:  "evsio.token:TGC",
 		Protocol: "multiple-token",
