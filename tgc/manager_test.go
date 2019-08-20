@@ -59,7 +59,7 @@ func TestWalletManager_GetInfo(t *testing.T) {
 
 func TestWalletManager_GetAccount(t *testing.T) {
 	wm := testNewWalletManager()
-	r, err := wm.Api.GetAccount("eostesterkkk")
+	r, err := wm.Api.GetAccount("bitbanktest11")
 	if err != nil {
 		t.Errorf("unexpected error: %v", err)
 		return
@@ -99,7 +99,7 @@ func TestWalletManager_GetABI(t *testing.T) {
 
 func TestWalletManager_GetCurrencyBalance(t *testing.T) {
 	wm := testNewWalletManager()
-	r, err := wm.Api.GetCurrencyBalance("tgcblocktest", "TGC", "evsio.token")
+	r, err := wm.Api.GetCurrencyBalance("bitbanktest11", "TGC", "evsio.token")
 	if err != nil {
 		t.Errorf("unexpected error: %v", err)
 		return

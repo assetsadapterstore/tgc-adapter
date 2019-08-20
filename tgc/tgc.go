@@ -33,7 +33,7 @@ func (wm *WalletManager) LoadAssetsConfig(c config.Configer) error {
 	//设置官方主站的API
 	masterAPI := c.String("masterAPI")
 	wm.MasterAPI = eos.New(masterAPI)
-	wm.MasterAPI.Debug = true
+	wm.MasterAPI.Debug = false
 	wm.Api.Debug = false
 
 	return nil
