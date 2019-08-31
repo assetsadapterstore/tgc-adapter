@@ -123,7 +123,7 @@ func TestTransfer(t *testing.T) {
 	walletID := "WMQmea5bRawTrsXcS376jVWZQzmqt8j55o"
 	accountID := "88G6dk763iernTn5De8Cun1B1DBLuAwx11kLHpWCPFTW"
 	//accountID := "xZkUcXHHJz55uK1n8F6PUFVUJEqysc1pAEPeFJEg3Qg"
-	to := "bitbanktestt"
+	to := "bwtgcforsend"
 
 	contract := openwallet.SmartContract{
 		Address:  "evsio.token:TGC",
@@ -135,7 +135,7 @@ func TestTransfer(t *testing.T) {
 
 	testGetAssetsAccountTokenBalance(tm, walletID, accountID, contract)
 
-	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "1", "", "hello boy", &contract)
+	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "10", "", "hello boy", &contract)
 	if err != nil {
 		return
 	}
