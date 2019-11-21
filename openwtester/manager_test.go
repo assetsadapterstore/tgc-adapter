@@ -115,8 +115,8 @@ func TestWalletManager_CreateAddress(t *testing.T) {
 	tm := testInitWalletManager()
 
 	walletID := "WMQmea5bRawTrsXcS376jVWZQzmqt8j55o"
-	accountID := "xZkUcXHHJz55uK1n8F6PUFVUJEqysc1pAEPeFJEg3Qg"
-	address, err := tm.CreateAddress(testApp, walletID, accountID, 1)
+	accountID := "88G6dk763iernTn5De8Cun1B1DBLuAwx11kLHpWCPFTW"
+	address, err := tm.CreateAddress(testApp, walletID, accountID, 5)
 	if err != nil {
 		log.Error(err)
 		return
