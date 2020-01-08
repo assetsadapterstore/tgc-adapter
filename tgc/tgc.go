@@ -15,26 +15,21 @@
 
 package tgc
 
-import (
-	"github.com/astaxie/beego/config"
-	"github.com/eoscanada/eos-go"
-)
-
 //FullName 币种全名
 func (wm *WalletManager) FullName() string {
 	return "TGC"
 }
 
 //LoadAssetsConfig 加载外部配置
-func (wm *WalletManager) LoadAssetsConfig(c config.Configer) error {
-
-	wm.WalletManager.LoadAssetsConfig(c)
-
-	//设置官方主站的API
-	masterAPI := c.String("masterAPI")
-	wm.MasterAPI = eos.New(masterAPI)
-	wm.MasterAPI.Debug = false
-	wm.Api.Debug = false
-
-	return nil
-}
+//func (wm *WalletManager) LoadAssetsConfig(c config.Configer) error {
+//
+//	wm.WalletManager.LoadAssetsConfig(c)
+//
+//	//设置官方主站的API
+//	masterAPI := c.String("masterAPI")
+//	wm.MasterAPI = eos.New(masterAPI)
+//	wm.MasterAPI.Debug = false
+//	wm.Api.Debug = false
+//
+//	return nil
+//}
