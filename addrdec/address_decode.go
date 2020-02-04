@@ -2,6 +2,7 @@ package addrdec
 
 import (
 	"fmt"
+	"github.com/blocktree/openwallet/openwallet"
 	"strings"
 
 	"github.com/blocktree/go-owcdrivers/addressEncoder"
@@ -23,11 +24,12 @@ var (
 
 //AddressDecoderV2
 type AddressDecoderV2 struct {
+	openwallet.AddressDecoderV2Base
 	IsTestNet bool
 }
 
 // AddressDecode decode address
-func (dec *AddressDecoderV2) AddressDecode(pubKey string) ([]byte, error) {
+func (dec *AddressDecoderV2) AddressDecode(pubKey string, opts ...interface{}) ([]byte, error) {
 
 	var pubKeyMaterial string
 	if strings.HasPrefix(pubKey, TGCPublicKeyR1Prefix) {
@@ -52,7 +54,7 @@ func (dec *AddressDecoderV2) AddressDecode(pubKey string) ([]byte, error) {
 }
 
 // AddressEncode encode address
-func (dec *AddressDecoderV2) AddressEncode(hash []byte) string {
+func (dec *AddressDecoderV2) AddressEncode(hash []byte, opts ...interface{}) (string, error) {
 	data := addressEncoder.CatData(hash, addressEncoder.CalcChecksum(hash, TGC_mainnetPublic.ChecksumType))
-	return string(TGC_mainnetPublic.Prefix) + addressEncoder.EncodeData(data, "base58", TGC_mainnetPublic.Alphabet)
+	return string(TGC_mainnetPublic.Prefix) + addressEncoder.EncodeData(data, "base58", TGC_mainnetPublic.Alphabet), nil
 }

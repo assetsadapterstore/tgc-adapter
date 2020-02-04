@@ -17,12 +17,11 @@ package tgc
 
 import (
 	"github.com/assetsadapterstore/tgc-adapter/addrdec"
-	"github.com/blocktree/openwallet/openwallet"
 	"github.com/eoscanada/eos-go"
 )
 
 type addressDecoder struct {
-	*openwallet.AddressDecoderV2Base
+	addrdec.AddressDecoderV2
 	wm *WalletManager //钱包管理者
 }
 
@@ -40,8 +39,7 @@ func (decoder *addressDecoder) PrivateKeyToWIF(priv []byte, isTestnet bool) (str
 
 //PublicKeyToAddress 公钥转地址
 func (decoder *addressDecoder) PublicKeyToAddress(pub []byte, isTestnet bool) (string, error) {
-	address := addrdec.Default.AddressEncode(pub)
-	return address, nil
+	return addrdec.Default.AddressEncode(pub)
 }
 
 //RedeemScriptToAddress 多重签名赎回脚本转地址

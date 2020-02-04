@@ -121,7 +121,8 @@ func testSubmitTransactionStep(tm *openw.WalletManager, rawTx *openwallet.RawTra
 func TestTransfer(t *testing.T) {
 	tm := testInitWalletManager()
 	walletID := "WMQmea5bRawTrsXcS376jVWZQzmqt8j55o"
-	accountID := "88G6dk763iernTn5De8Cun1B1DBLuAwx11kLHpWCPFTW"
+	//accountID := "88G6dk763iernTn5De8Cun1B1DBLuAwx11kLHpWCPFTW"
+	accountID := "FkGufUVRVsiAbN9M38PfEBzFbZqVNszZM8qwQqbQLEHW"
 	//accountID := "xZkUcXHHJz55uK1n8F6PUFVUJEqysc1pAEPeFJEg3Qg"
 	to := "gameadeposit"
 	memo := "1197421113450168320"
@@ -136,7 +137,7 @@ func TestTransfer(t *testing.T) {
 
 	testGetAssetsAccountTokenBalance(tm, walletID, accountID, contract)
 
-	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.001", "", memo, &contract)
+	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.1", "", memo, &contract)
 	if err != nil {
 		return
 	}
