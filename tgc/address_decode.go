@@ -17,9 +17,12 @@ package tgc
 
 import (
 	"github.com/assetsadapterstore/tgc-adapter/addrdec"
+	"github.com/blocktree/openwallet/openwallet"
+	"github.com/eoscanada/eos-go"
 )
 
 type addressDecoder struct {
+	*openwallet.AddressDecoderV2Base
 	wm *WalletManager //钱包管理者
 }
 
@@ -53,4 +56,13 @@ func (decoder *addressDecoder) WIFToPrivateKey(wif string, isTestnet bool) ([]by
 		return nil, err
 	}
 	return priv, nil
+}
+
+// AddressVerify 地址校验
+func (decoder *addressDecoder) AddressVerify(address string, opts ...interface{}) bool {
+	_, err := decoder.wm.Api.GetAccount(eos.AccountName(address))
+	if err != nil {
+		return false
+	}
+	return true
 }

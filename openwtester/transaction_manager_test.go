@@ -149,3 +149,26 @@ func TestGetAccountTokenBalance(t *testing.T) {
 		log.Infof("ConfirmBalance[%s] = %s", b.Balance.Address, b.Balance.ConfirmBalance)
 	}
 }
+
+
+func TestGetAddressVerify(t *testing.T) {
+	symbol := "TGC"
+	assetsMgr, err := openw.GetAssetsAdapter(symbol)
+	if err != nil {
+		log.Error(symbol, "is not support")
+		return
+	}
+	//读取配置
+	absFile := filepath.Join(configFilePath, symbol+".ini")
+
+	c, err := config.NewConfig("ini", absFile)
+	if err != nil {
+		return
+	}
+	assetsMgr.LoadAssetsConfig(c)
+	addrDec := assetsMgr.GetAddressDecoderV2()
+
+	flag := addrDec.AddressVerify("gamewithdraw")
+	log.Infof("flag: %v", flag)
+
+}
